@@ -51,7 +51,7 @@ func printSegitiga(number int)  {
 func genPass(password string, level string) string {
 	response := ""
 	passwords := strings.ToLower(password)
-	if len(passwords) < 6 {
+	if len(passwords) <= 6 {
 		response += "Panjang password harus lebih dari 6 huruf"
 	} else if level == "low" {
 		gen1 := strings.ToUpper(passwords[0:1])
