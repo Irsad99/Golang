@@ -92,8 +92,6 @@ func durasifilm(lamaTerbang int) string {
 		
 		if calculate := arrFilm[i] + arrFilm[temp]; calculate == lamaTerbang{
 			response += strconv.Itoa(arrFilm[i]) + " dan " + strconv.Itoa(arrFilm[temp]) + "\n"
-		} else {
-			response += "Terjadi kesalahan"
 		}
 	}
 
