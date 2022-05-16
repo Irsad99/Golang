@@ -16,12 +16,28 @@ func main() {
 	printSegitiga(5)
 
 	// Number 2
-	result := genPass("Abcdef", "mids")
+	result := genPass("Abcdefg", "mid")
 	fmt.Println(result)
 
 	// Number 3
 	result2 := Film(7)
 	fmt.Println(result2)
+
+	// Goroutines
+	go PrintName("Irsad")
+	PrintName("Satya")
+
+	// Pointer
+
+	// declare
+	nameStudent := "Bagus Setiawan"
+	var Student *string = &nameStudent
+
+	fmt.Println(Student, nameStudent)
+
+	// change
+	*Student = "Moh. Irsad"
+	fmt.Println(Student, nameStudent)
 }
 
 func printSegitiga(number int)  {
@@ -80,7 +96,7 @@ func genPass(password string, level string) string {
 
 func Film(lamaTerbang int) string {
 	
-	arrFilm := []int{1, 5, 3, 7, 2, 4, 8, 9}
+	arrFilm := []int{1, 5, 2, 7, 3, 4, 8, 9}
 	temp := 0
 	response := ""
 	for index, value := range arrFilm {
@@ -102,4 +118,11 @@ func Film(lamaTerbang int) string {
 	}
 
 	return response
+}
+
+func PrintName(name string)  {
+	for i := 0; i < 5; i++ {
+		time.Sleep(200 * time.Millisecond)
+		fmt.Println(name)
+	}
 }
