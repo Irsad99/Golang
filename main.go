@@ -20,7 +20,7 @@ func main() {
 	fmt.Println(result)
 
 	// Number 3
-	result2 := durasifilm(7)
+	result2 := Film(7)
 	fmt.Println(result2)
 }
 
@@ -78,20 +78,26 @@ func genPass(password string, level string) string {
 	return response
 }
 
-func durasifilm(lamaTerbang int) string {
+func Film(lamaTerbang int) string {
 	
-	arrFilm := []int{1, 5, 2, 7, 3, 4, 8, 9}
+	arrFilm := []int{1, 5, 3, 7, 2, 4, 8, 9}
 	temp := 0
 	response := ""
-	for i := 0; i < len(arrFilm) ; i++ {
+	for index, value := range arrFilm {
+		// index
 		if temp < len(arrFilm)-1 {
 			temp += 1
 		} else {
 			temp += 0
 		}
 		
-		if calculate := arrFilm[i] + arrFilm[temp]; calculate == lamaTerbang{
-			response += strconv.Itoa(arrFilm[i]) + " dan " + strconv.Itoa(arrFilm[temp]) + "\n"
+		// Logic
+		if len(response) <= 0 && index == len(arrFilm)-1{
+			response += "Selamat menikmati film yang tersedia"
+		} else if calculate := arrFilm[index] + arrFilm[temp]; calculate == lamaTerbang{
+			response += strconv.Itoa(value) + " dan " + strconv.Itoa(arrFilm[temp]) + "\n"
+		} else {
+			response += ""
 		}
 	}
 
